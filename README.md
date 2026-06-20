@@ -4,6 +4,14 @@
 
 > Built for the Circle Agent Wallet Hackathon 🏆
 
+## Demo
+
+[![Watch Demo Video](https://img.shields.io/badge/▶%20Watch%20Demo-Google%20Drive-blue?style=for-the-badge&logo=google-drive)](https://drive.google.com/file/d/1Z0SddLqy8bRE0PasiSzMO-FZ4hgd42oy/view?usp=sharing)
+
+**Live App:** [https://neuroeconomy.vercel.app](https://neuroeconomy.vercel.app)
+
+---
+
 NeuroEconomy is an autonomous AI system where a Claude-powered orchestrator agent hires specialist research agents, pays each one in USDC via Circle Agent Wallets, synthesizes a professional intelligence brief, and autonomously settles supply chain payments — all with real-time streaming, USDC transactions, and downloadable PDF invoices.
 
 ---
