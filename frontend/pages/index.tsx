@@ -463,7 +463,7 @@ export default function Home() {
     };
 
     ws.onerror = () => {
-      setError("Could not connect to backend. Make sure it is running on port 8000.");
+      setError(`Could not connect to backend (${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}). Check backend is deployed and running.`);
       setIsRunning(false);
     };
 
@@ -726,7 +726,7 @@ function SettlementPanel() {
     };
 
     ws.onerror = () => {
-      setSettleError("Connection error. Make sure backend is running on port 8000.");
+      setSettleError(`Could not connect to backend (${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}). Check backend is deployed and running.`);
       setIsRunning(false);
     };
 
