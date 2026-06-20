@@ -444,7 +444,9 @@ export default function Home() {
     setRefunded(null);
     setError(null);
 
-    const ws = new WebSocket("ws://localhost:8000/ws/research");
+    const backendHttp = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+    const backendWs = backendHttp.replace(/^http/, "ws");
+    const ws = new WebSocket(`${backendWs}/ws/research`);
     wsRef.current = ws;
 
     ws.onopen = () => {
@@ -681,7 +683,9 @@ function SettlementPanel() {
     setPrices([]); setFreight([]); setLandedRows([]);
     setBalanceInfo(null); setResult(null); setSettleError(null);
 
-    const ws = new WebSocket("ws://localhost:8000/ws/settle");
+    const backendHttp2 = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+    const backendWs2 = backendHttp2.replace(/^http/, "ws");
+    const ws = new WebSocket(`${backendWs2}/ws/settle`);
     wsRef.current = ws;
 
     ws.onopen = () => {
@@ -919,7 +923,7 @@ function SettlementPanel() {
 
             {/* PDF download */}
             <a
-              href={`http://localhost:8000${result.download_url}`}
+              href={`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"}${result.download_url}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-sm transition shrink-0"

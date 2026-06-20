@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: neuroeconomy-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: CIRCLE_API_KEY
+        sync: false
+      - key: CIRCLE_MOCK_MODE
+        value: "true"
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: ORCHESTRATOR_WALLET_ID
+        value: mock_orch_001
+      - key: ORCHESTRATOR_ADDRESS
+        value: "0xOrch742A8B3c4D5E6F7890AbCdEf1234567890Ab"
+      - key: USER_WALLET_ADDRESS
+        value: "0xUser1234567890AbCdEf1234567890AbCdEf12"
+      - key: BUDGET_CAP_USDC
+        value: "12.0"
+      - key: INITIAL_BALANCE_USDC
+        value: "20.0"
+      - key: DEMO_MODE
+        value: "true"
