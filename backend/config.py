@@ -1,0 +1,17 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+CIRCLE_API_KEY = os.getenv("CIRCLE_API_KEY", "")
+CIRCLE_MOCK_MODE = os.getenv("CIRCLE_MOCK_MODE", "true").lower() == "true"
+
+ORCHESTRATOR_WALLET_ID = os.getenv("ORCHESTRATOR_WALLET_ID", "mock_orch_001")
+ORCHESTRATOR_ADDRESS = os.getenv("ORCHESTRATOR_ADDRESS", "0xOrch742A8B3c4D5E6F7890AbCdEf1234567890Ab")
+USER_WALLET_ADDRESS = os.getenv("USER_WALLET_ADDRESS", "0xUser1234567890AbCdEf1234567890AbCdEf12")
+
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY", "")
+
+BUDGET_CAP_USDC = float(os.getenv("BUDGET_CAP_USDC", "12.0"))
+INITIAL_BALANCE_USDC = float(os.getenv("INITIAL_BALANCE_USDC", "20.0"))
